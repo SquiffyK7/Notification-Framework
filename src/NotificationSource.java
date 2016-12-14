@@ -14,6 +14,7 @@ public class NotificationSource {
     public void notifySinks(Notification notification) {
         for(NotificationSink sink : sinks) {
             sink.postNotification(notification);
+            System.out.println(sinks.size());
         }
     }
 

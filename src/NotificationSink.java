@@ -20,7 +20,18 @@ public class NotificationSink extends UnicastRemoteObject implements Notificatio
     }
 
     public Notification receive() {
-        return notifications.remove();
+
+        try {
+            return notifications.remove();
+        } catch(Exception e) {
+            return null;
+        }
+
+//        if(!notifications.isEmpty()) {
+//            return notifications.remove();
+//        } else {
+//            return null;
+//        }
     }
 
 }
